@@ -1,0 +1,448 @@
+2018-04-15 14:21:54 exception 'PDOException' with message 'SQL:INSERT INTO `too_users` ( `account`,`password`,`name`,`create_time`) VALUES ( :account,:password,:name,:create_time) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'field list'' in D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php:1769
+Stack trace:
+#0 D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php(1827): Workerman\MySQL\Connection->execute('INSERT INTO `to...', Array)
+#1 D:\GITHUB\gameworker\Controller\Index.php(41): Workerman\MySQL\Connection->query()
+#2 D:\GITHUB\gameworker\Lib\Route.php(69): Controller\Index->register()
+#3 D:\GITHUB\gameworker\Lib\App.php(63): Lib\Route::dispatch()
+#4 D:\GITHUB\gameworker\server.php(35): Lib\App::run()
+#5 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#6 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(629): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #31)
+#8 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(856): Workerman\Events\Select->loop()
+#10 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(473): Workerman\Worker->run()
+#11 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(382): Workerman\Worker::runAllWorkers()
+#12 D:\GITHUB\gameworker\server.php(57): Workerman\Worker::runAll()
+#13 {main}
+2018-04-15 14:24:09 exception 'PDOException' with message 'SQL:INSERT INTO `too_users` ( `account`,`password`,`name`,`create_time`) VALUES ( :account,:password,:name,:create_time) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'field list'' in D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php:1769
+Stack trace:
+#0 D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php(1827): Workerman\MySQL\Connection->execute('INSERT INTO `to...', Array)
+#1 D:\GITHUB\gameworker\Controller\Index.php(41): Workerman\MySQL\Connection->query()
+#2 D:\GITHUB\gameworker\Lib\Route.php(69): Controller\Index->register()
+#3 D:\GITHUB\gameworker\Lib\App.php(63): Lib\Route::dispatch()
+#4 D:\GITHUB\gameworker\server.php(35): Lib\App::run()
+#5 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#6 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(629): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(856): Workerman\Events\Select->loop()
+#10 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(473): Workerman\Worker->run()
+#11 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(382): Workerman\Worker::runAllWorkers()
+#12 D:\GITHUB\gameworker\server.php(57): Workerman\Worker::runAll()
+#13 {main}
+2018-04-15 14:26:27 exception 'PDOException' with message 'SQL:INSERT INTO `too_users` ( `account`,`password`,`name`,`create_time`) VALUES ( :account,:password,:name,:create_time) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'field list'' in D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php:1769
+Stack trace:
+#0 D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php(1827): Workerman\MySQL\Connection->execute('INSERT INTO `to...', Array)
+#1 D:\GITHUB\gameworker\Controller\Index.php(41): Workerman\MySQL\Connection->query()
+#2 D:\GITHUB\gameworker\Lib\Route.php(69): Controller\Index->register()
+#3 D:\GITHUB\gameworker\Lib\App.php(63): Lib\Route::dispatch()
+#4 D:\GITHUB\gameworker\server.php(35): Lib\App::run()
+#5 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#6 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(629): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(856): Workerman\Events\Select->loop()
+#10 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(473): Workerman\Worker->run()
+#11 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(382): Workerman\Worker::runAllWorkers()
+#12 D:\GITHUB\gameworker\server.php(57): Workerman\Worker::runAll()
+#13 {main}
+2018-04-15 14:27:37 exception 'PDOException' with message 'SQL:INSERT INTO `too_users` ( `account`,`password`,`name`,`create_time`) VALUES ( :account,:password,:name,:create_time) SQLSTATE[42S22]: Column not found: 1054 Unknown column 'create_time' in 'field list'' in D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php:1769
+Stack trace:
+#0 D:\GITHUB\gameworker\vendor\workerman\mysql\src\Connection.php(1827): Workerman\MySQL\Connection->execute('INSERT INTO `to...', Array)
+#1 D:\GITHUB\gameworker\Controller\Index.php(41): Workerman\MySQL\Connection->query()
+#2 D:\GITHUB\gameworker\Lib\Route.php(69): Controller\Index->register()
+#3 D:\GITHUB\gameworker\Lib\App.php(63): Lib\Route::dispatch()
+#4 D:\GITHUB\gameworker\server.php(35): Lib\App::run()
+#5 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#6 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(629): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(856): Workerman\Events\Select->loop()
+#10 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(473): Workerman\Worker->run()
+#11 D:\GITHUB\gameworker\vendor\workerman\workerman-for-win\Worker.php(382): Workerman\Worker::runAllWorkers()
+#12 D:\GITHUB\gameworker\server.php(57): Workerman\Worker::runAll()
+#13 {main}
+2018-04-15 21:08:13 pid:1217 Workerman[start.php] start in DEBUG mode
+2018-04-15 21:09:26 pid:1218 Workerman[start.php] start in DEBUG mode
+2018-04-15 21:10:21 pid:1228 Workerman[server.php] start in DEBUG mode
+2018-04-15 21:10:21 pid:1229 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(466): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#10 {main}
+2018-04-15 21:10:22 pid:1229 Worker process terminated
+2018-04-15 21:10:22 pid:1228 worker[ApiServers:1229] exit with status 64000
+2018-04-15 21:10:22 pid:1230 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:23 pid:1230 Worker process terminated
+2018-04-15 21:10:23 pid:1228 worker[ApiServers:1230] exit with status 64000
+2018-04-15 21:10:23 pid:1231 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:24 pid:1231 Worker process terminated
+2018-04-15 21:10:24 pid:1228 worker[ApiServers:1231] exit with status 64000
+2018-04-15 21:10:24 pid:1232 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:25 pid:1232 Worker process terminated
+2018-04-15 21:10:25 pid:1228 worker[ApiServers:1232] exit with status 64000
+2018-04-15 21:10:25 pid:1233 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:26 pid:1233 Worker process terminated
+2018-04-15 21:10:26 pid:1228 worker[ApiServers:1233] exit with status 64000
+2018-04-15 21:10:26 pid:1234 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:27 pid:1234 Worker process terminated
+2018-04-15 21:10:27 pid:1228 worker[ApiServers:1234] exit with status 64000
+2018-04-15 21:10:27 pid:1235 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:28 pid:1235 Worker process terminated
+2018-04-15 21:10:28 pid:1228 worker[ApiServers:1235] exit with status 64000
+2018-04-15 21:10:28 pid:1236 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:29 pid:1236 Worker process terminated
+2018-04-15 21:10:29 pid:1228 worker[ApiServers:1236] exit with status 64000
+2018-04-15 21:10:29 pid:1237 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:30 pid:1237 Worker process terminated
+2018-04-15 21:10:30 pid:1228 worker[ApiServers:1237] exit with status 64000
+2018-04-15 21:10:30 pid:1238 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:31 pid:1238 Worker process terminated
+2018-04-15 21:10:31 pid:1228 worker[ApiServers:1238] exit with status 64000
+2018-04-15 21:10:31 pid:1239 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:32 pid:1239 Worker process terminated
+2018-04-15 21:10:32 pid:1228 worker[ApiServers:1239] exit with status 64000
+2018-04-15 21:10:32 pid:1240 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:33 pid:1240 Worker process terminated
+2018-04-15 21:10:33 pid:1228 worker[ApiServers:1240] exit with status 64000
+2018-04-15 21:10:33 pid:1241 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:34 pid:1228 Workerman[server.php] stopping ...
+2018-04-15 21:10:34 pid:1241 Worker process terminated
+2018-04-15 21:10:34 pid:1228 worker[ApiServers:1241] exit with status 64000
+2018-04-15 21:10:34 pid:1228 Workerman[server.php] has been stopped
+2018-04-15 21:10:55 pid:1242 Workerman[server.php] start in DEBUG mode
+2018-04-15 21:10:55 pid:1243 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(466): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#10 {main}
+2018-04-15 21:10:56 pid:1243 Worker process terminated
+2018-04-15 21:10:56 pid:1242 worker[ApiServers:1243] exit with status 64000
+2018-04-15 21:10:56 pid:1244 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:57 pid:1244 Worker process terminated
+2018-04-15 21:10:57 pid:1242 worker[ApiServers:1244] exit with status 64000
+2018-04-15 21:10:57 pid:1245 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:10:58 pid:1245 Worker process terminated
+2018-04-15 21:10:58 pid:1242 worker[ApiServers:1245] exit with status 64000
+2018-04-15 21:10:59 pid:1246 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:00 pid:1246 Worker process terminated
+2018-04-15 21:11:00 pid:1242 worker[ApiServers:1246] exit with status 64000
+2018-04-15 21:11:00 pid:1247 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:01 pid:1247 Worker process terminated
+2018-04-15 21:11:01 pid:1242 worker[ApiServers:1247] exit with status 64000
+2018-04-15 21:11:01 pid:1248 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:02 pid:1248 Worker process terminated
+2018-04-15 21:11:02 pid:1242 worker[ApiServers:1248] exit with status 64000
+2018-04-15 21:11:02 pid:1249 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:03 pid:1249 Worker process terminated
+2018-04-15 21:11:03 pid:1242 worker[ApiServers:1249] exit with status 64000
+2018-04-15 21:11:03 pid:1250 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:04 pid:1250 Worker process terminated
+2018-04-15 21:11:04 pid:1242 worker[ApiServers:1250] exit with status 64000
+2018-04-15 21:11:04 pid:1251 exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/GameWorker/vendor/workerman/mysql/src/Connection.php:1712
+Stack trace:
+#0 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1712): PDO->__construct('mysql:dbname=pd...', 'root', '123456', Array)
+#1 /home/GameWorker/vendor/workerman/mysql/src/Connection.php(1698): Workerman\MySQL\Connection->connect()
+#2 /home/GameWorker/server.php(26): Workerman\MySQL\Connection->__construct('127.0.0.1', '3306', 'root', '123456', 'pdk')
+#3 [internal function]: {closure}(Object(Workerman\Worker))
+#4 /home/GameWorker/vendor/workerman/workerman/Worker.php(2115): call_user_func(Object(Closure), Object(Workerman\Worker))
+#5 /home/GameWorker/vendor/workerman/workerman/Worker.php(1323): Workerman\Worker->run()
+#6 /home/GameWorker/vendor/workerman/workerman/Worker.php(1156): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#7 /home/GameWorker/vendor/workerman/workerman/Worker.php(1130): Workerman\Worker::forkWorkersForLinux()
+#8 /home/GameWorker/vendor/workerman/workerman/Worker.php(1455): Workerman\Worker::forkWorkers()
+#9 /home/GameWorker/vendor/workerman/workerman/Worker.php(1404): Workerman\Worker::monitorWorkersForLinux()
+#10 /home/GameWorker/vendor/workerman/workerman/Worker.php(468): Workerman\Worker::monitorWorkers()
+#11 /home/GameWorker/server.php(57): Workerman\Worker::runAll()
+#12 {main}
+2018-04-15 21:11:04 pid:1242 Workerman[server.php] stopping ...
+2018-04-15 21:11:04 pid:1251 Worker process terminated
+2018-04-15 21:11:04 pid:1242 worker[ApiServers:1251] exit with status 64000
+2018-04-15 21:11:04 pid:1242 Workerman[server.php] has been stopped
+2018-04-15 21:12:36 pid:1259 Workerman[server.php] start in DEBUG mode
+2018-04-15 21:14:16 pid:1259 Workerman[server.php] stopping ...
+2018-04-15 21:14:16 pid:1259 Workerman[server.php] has been stopped
+2018-04-15 21:14:19 pid:1261 Workerman[server.php] start in DEBUG mode
+2018-04-15 21:18:23 pid:1261 Workerman[server.php] stopping ...
+2018-04-15 21:18:23 pid:1261 Workerman[server.php] has been stopped

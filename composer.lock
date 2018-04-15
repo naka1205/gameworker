@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/Channel/1425baf00f6342bfee89b726326225a8b6a8ea80.zip",
+                "url": "https://api.github.com/repos/walkor/Channel/zipball/1425baf00f6342bfee89b726326225a8b6a8ea80",
                 "reference": "1425baf00f6342bfee89b726326225a8b6a8ea80",
                 "shasum": ""
             },
@@ -46,7 +46,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/GatewayWorker/4444c59da4b5cd68679172904a40b66e1338389c.zip",
+                "url": "https://api.github.com/repos/walkor/GatewayWorker/zipball/4444c59da4b5cd68679172904a40b66e1338389c",
                 "reference": "4444c59da4b5cd68679172904a40b66e1338389c",
                 "shasum": ""
             },
@@ -80,7 +80,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/GatewayClient/e58edc1f5eee7465c24fc97d8adff1f59b1b8455.zip",
+                "url": "https://api.github.com/repos/walkor/GatewayClient/zipball/e58edc1f5eee7465c24fc97d8adff1f59b1b8455",
                 "reference": "e58edc1f5eee7465c24fc97d8adff1f59b1b8455",
                 "shasum": ""
             },
@@ -99,16 +99,16 @@
         },
         {
             "name": "workerman/mysql",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/mysql.git",
-                "reference": "a6f3ac568507062849fc30efdf8ad54243f67d91"
+                "reference": "34ac7b3986294197c0fe8142fa450abfebdad779"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/mysql/a6f3ac568507062849fc30efdf8ad54243f67d91.zip",
-                "reference": "a6f3ac568507062849fc30efdf8ad54243f67d91",
+                "url": "https://api.github.com/repos/walkor/mysql/zipball/34ac7b3986294197c0fe8142fa450abfebdad779",
+                "reference": "34ac7b3986294197c0fe8142fa450abfebdad779",
                 "shasum": ""
             },
             "require": {
@@ -133,20 +133,20 @@
                 "pdo",
                 "pdo_mysql"
             ],
-            "time": "2017-12-26T08:51:58+00:00"
+            "time": "2018-03-06T06:20:23+00:00"
         },
         {
             "name": "workerman/phpsocket.io",
-            "version": "v1.1.5",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/phpsocket.io.git",
-                "reference": "60656796076b90f9529f1859f91134a88d52dc75"
+                "reference": "d9ab179bb2c0f2ccf8f224e0bf093b5b59323e01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/phpsocket.io/60656796076b90f9529f1859f91134a88d52dc75.zip",
-                "reference": "60656796076b90f9529f1859f91134a88d52dc75",
+                "url": "https://api.github.com/repos/walkor/phpsocket.io/zipball/d9ab179bb2c0f2ccf8f224e0bf093b5b59323e01",
+                "reference": "d9ab179bb2c0f2ccf8f224e0bf093b5b59323e01",
                 "shasum": ""
             },
             "require": {
@@ -167,20 +167,20 @@
             "keywords": [
                 "Socket.io"
             ],
-            "time": "2017-07-22T08:10:18+00:00"
+            "time": "2018-04-10T02:38:11+00:00"
         },
         {
             "name": "workerman/workerman",
-            "version": "v3.5.4",
+            "version": "v3.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/Workerman.git",
-                "reference": "f6e129079e5f5398bffc218024f2dd95678fc564"
+                "reference": "46a77574a5ca39def6dec51ddf350cf50daab309"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/Workerman/f6e129079e5f5398bffc218024f2dd95678fc564.zip",
-                "reference": "f6e129079e5f5398bffc218024f2dd95678fc564",
+                "url": "https://api.github.com/repos/walkor/Workerman/zipball/46a77574a5ca39def6dec51ddf350cf50daab309",
+                "reference": "46a77574a5ca39def6dec51ddf350cf50daab309",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +213,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2017-12-06T04:17:52+00:00"
+            "time": "2018-04-11T11:25:52+00:00"
         },
         {
             "name": "workerman/workerman-for-win",
@@ -225,7 +225,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/walkor/workerman-for-win/cbaae3193e4567fd9cfc8099931c63d9b12174ee.zip",
+                "url": "https://api.github.com/repos/walkor/workerman-for-win/zipball/cbaae3193e4567fd9cfc8099931c63d9b12174ee",
                 "reference": "cbaae3193e4567fd9cfc8099931c63d9b12174ee",
                 "shasum": ""
             },

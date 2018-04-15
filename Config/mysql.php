@@ -9,7 +9,7 @@ return [
                 'uname' => 'root',      //数据库用户名
                 'pwd' => '123456',          //数据库密码
                 'charset' => 'UTF8',        //数据库编码
-                'dbname' => 'pdk',        //数据库名
+                'dbname' => 'ddz',        //数据库名
                 'prefix' => '',     //数据库表前缀
             ],
 

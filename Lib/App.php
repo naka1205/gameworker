@@ -62,7 +62,7 @@ class App {
 		
 		$reslut = Route::dispatch(); 
 		$response = is_array($reslut) ? json_encode($reslut) : $reslut;
-		self::$connection->send($response);
+		App::$connection->send($response);
 		
 	}
 
