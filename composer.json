@@ -1,0 +1,15 @@
+{
+    "require": {
+        "workerman/phpsocket.io": "^1.1",
+        "workerman/workerman-for-win": "^3.5",
+        "workerman/gateway-worker": "^3.0",
+        "workerman/mysql": "^1.0",
+        "workerman/gatewayclient": "^3.0"
+    },
+
+    "autoload": {
+        "psr-4": {"Lib\\": "Lib/"},
+        "psr-4": {"Controller\\": "Controller/"},
+        "psr-4": {"Code\\": "Code/"}
+    }
+}

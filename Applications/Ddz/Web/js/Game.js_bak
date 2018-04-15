@@ -1,0 +1,476 @@
+
+
+var Game={
+        Config : null
+        ,Seat: null
+        ,Poker: null
+        , LandlordPoker: null//地主扑克
+        , LandlordNum: null//地主编号
+        , BeginNum: null//发牌开始编号
+        , DealerNum: null//当前操作编号
+        , MaxScore: null//抢牌最高分
+        , GrabTime: null//抢牌次数
+        , DealingHandle: null//发牌句柄
+        , DealingNum: null//已发牌数
+        , PokerSize: { width: 100, height: 120 }//扑克牌大小
+        , LastWin: null//上一把赢家
+        , LastHandNum: null//标示谁出的最后一手牌
+        , LastHandPokerType: null//最后一手牌类型
+        , ToPlay: null//已抢完地主，出牌中
+        , PokerTypes: {//扑克牌类型
+                "1": { weight: 1, allNum: 1, minL: 5, maxL: 12 }
+                , "11": { weight: 1, allNum: 2, minL: 3, maxL: 10 }
+                , "111": { weight: 1, allNum: 3, minL: 1, maxL: 6 }
+                , "1111": { weight: 2, allNum: 4, minL: 1, maxL: 1 }
+                , "1112": { weight: 1, zcy: "111", fcy: "1", fcyNum: 1, allNum: 4, minL: 1, maxL: 5 }
+                , "11122": { weight: 1, zcy: "111", fcy: "11", fcyNum: 1, allNum: 5, minL: 1, maxL: 4 }
+                , "111123": { weight: 1, zcy: "1111", fcy: "1", fcyNum: 2, allNum: 6, minL: 1, maxL: 1 }
+                , "11112233": { weight: 1, zcy: "1111", fcy: "11", fcyNum: 2, allNum: 8, minL: 1, maxL: 1 }
+                , "12": { weight: 3, allNum: 2, minL: 1, maxL: 1 }
+        }
+
+};
+
+
+//创建房间
+Game.init = function () {
+        // 创建websocket
+        App.Socket = new WebSocket("ws://" + document.domain + ":7070");
+
+        App.Socket.onclose = function () {
+                console.log("连接关闭");
+        }
+
+        App.Socket.onerror = function () {
+                console.log("出现错误");
+        }
+
+        // 当socket连接打开时
+        App.Socket.onopen = Game.onOpen;
+
+        // 当有消息时根据消息类型显示不同信息
+        App.Socket.onmessage = Game.onMessage;
+};
+
+//登录
+Game.onOpen = function(){
+        var data = {
+                roomid: App.Roomid
+        }
+        Http.post('/check', data, function (res) {
+                console.log(res);
+                if ( res.status == ture ) {
+                        App.Clients = res.clients;
+                        Game.Seat = res.seat;
+                        Game.login();
+                }
+
+        })
+
+        var login_data = '{"type":"login","auth":"' + App.Auth + '"}';
+        console.log('onOpen', "发送数据:" + login_data);
+        
+        App.Socket.send(login_data);    
+
+};
+//事件
+Game.onMessage = function(e){
+            if ( e.data == "null" ) { return ;}
+            console.log(e);
+            var data = eval("("+e.data+")");
+            switch(data['type']){
+                    // 服务端ping客户端
+                    case 'ping':
+                        App.Socket.send('{"type":"pong"}');
+                        break;;
+                    // 登录 
+                    case 'login':
+                        var data = {
+                                name: App.User.name,
+                                roomid: App.Roomid
+                        }
+                        Http.post('/join', data, function (res) {
+                                console.log(res);
+                                if ( res.status == ture ) {
+                                        App.Clients = res.clients;
+                                        Game.Seat = res.seat;
+                                        Game.login();
+                                }
+                                
+                        })
+                        
+                        break;
+                    // 加入 更新用户列表
+                    case 'join':
+
+                        if ( !data['name'] ) {
+                                console.log("房间满员");
+                                break;
+                        }
+
+                            console.log(data['name']+"加入房间");
+
+                        if(data['clients'])
+                        {
+
+                                App.Roomid = data['roomid'];
+                                App.Clients = data['clients'];
+
+                                User.Id = data['uid'];
+                                User.Name = data['name'];
+                                User.Seat = data['seat'];
+                                User.State = 1;
+
+                                Game.login();
+                        }
+                        else
+                        {
+                                Room.Clients[data['seat']] = { 'client_id': data['client_id'], 'name': data['name'],'state':1};
+                                Game.flush();
+                        }
+                        
+                        break;
+                    //玩家准备
+                    case 'ready':
+                        console.log(data['name']+"玩家准备");
+                        var key = parseInt(data['seat']);
+                        Room.Clients[key].state = data['state'];
+                        Game.flush();
+
+                        break;
+                    //开始
+                    case 'begin':
+                        console.log(data['name']+"开始游戏");
+                        Game.DealingNum = 1;
+                        Game.Poker = data['poker'];
+                        Game.begin();
+
+                        break;
+                    //抢地主
+                    case 'landlord':
+                        console.log(data['name']+"开始抢地主");
+                        Game.LastHandNum = data['seat'];
+                        //地主已经产生
+                        if ( data['landlord_poker'] ) {
+                                Game.LandlordPoker = data['landlord_poker'];
+                        }
+
+                        Game.LandlordNum = data['landlord_num'];
+                        Game.MaxScore = data['max_score'];
+                        Game.GrabTime = data['grab_time'];
+
+                        Game.landlord();
+
+                        break;
+                    // 用户掉线 更新用户列表
+                    case 'logout':
+                        console.log(data['name']+"用户掉线");
+                        var key = parseInt(data['seat']);
+                        Room.Clients[key].state = 3;
+                        Game.flush();
+                        break;
+            }
+
+};
+
+//房间
+Game.login = function(){
+        console.log('Game.login');
+
+        switch (Game.Seat){
+                case 1:
+                        LeftUser.Seat = 2;
+                        RightUser.Seat = 3;
+                        break;
+                case 2:
+                        LeftUser.Seat = 3;
+                        RightUser.Seat = 1;
+                        break;
+                case 3:
+                        LeftUser.Seat = 1;
+                        RightUser.Seat = 2;
+                        break;
+        }
+
+        for ( var key in Room.Clients ) {
+                if (Game.Seat == key ) {
+                        continue;
+                }
+
+                if ( LeftUser.Seat ==  key) {
+                        LeftUser.Id = Room.Clients[key].client_id;
+                        LeftUser.Name = Room.Clients[key].client_name;
+                        LeftUser.State = Room.Clients[key].state;
+                }else if ( RightUser.Seat ==  key ) {
+                        RightUser.Id = Room.Clients[key].client_id;
+                        RightUser.Name =Room.Clients[key].client_name;
+                        RightUser.State = Room.Clients[key].state;
+                }
+        }
+
+        // console.log(User);
+        // console.log(LeftUser);
+        // console.log(RightUser);
+
+        JMain.JForm.clearControls();
+        JMain.JForm.setBGImage(ResourceData.Images.bg2);
+
+        Game.RoomPanel = new JControls.Object({x:0,y:0},{width:800,height:40});//用于显示房间信息
+
+        var RoomLabel =new JControls.Label({x:10,y:10},{width:50,height:40}).setText('房间:' ).setFontType("bold").setFontSize(20).setFontColor(JColor.red);
+        var RoomIdLabel =new JControls.Label({x:60,y:10},{width:100,height:40}).setText(Room.Id).setFontType("bold").setFontSize(20).setFontColor(JColor.red);
+
+        var OutButton = new JControls.Button({x:680,y:10},{width:100,height:30}).setText("退出").setBGImage(ResourceData.Images.btn);
+        OutButton.onClick = function(){
+
+                // 准备就绪
+                var logout_data = '{"type":"logout","room_id":"'+GInfo.RoomId+'"}';
+                console.log("玩家返回:"+logout_data);
+                GInfo.Socket.send(logout_data);
+                Game.outRoom();
+        }
+
+        var room_controls = [RoomLabel,RoomIdLabel,OutButton];
+
+        Game.RoomPanel.addControlInLast(room_controls);
+
+
+
+        Game.UserPanel = new JControls.Object({x:180,y:200},{width:150,height:60});//用于显示玩家信息
+
+        var UserLabel = new JControls.Label({x:180,y:220},{width:50,height:20}).setText('玩家' ).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('center');
+        var NameLabel = new JControls.Label({x:180,y:240},{width:100,height:20}).setText(GInfo.Name).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('center');
+        var StateLabel = new JControls.Label({x:180,y:200},{width:100,height:20}).setText(State[User.State]).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('center');
+
+        User.NameLabel = NameLabel;
+        User.StateLabel = StateLabel;
+
+        Game.UserPanel.addControlInLast([UserLabel,NameLabel,StateLabel]);
+
+
+        Game.LeftUserPanel = new JControls.Object({x:0,y:140},{width:150,height:40});//用于显示左边玩家信息
+
+        var LeftUserLabel = new JControls.Label({x:10,y:140},{width:60,height:20}).setText('左玩家' ).setFontType("bold").setFontSize(20).setFontColor(JColor.blue);
+        var LeftNameLabel = new JControls.Label({x:10,y:160},{width:100,height:20}).setText(LeftUser.Name).setFontType("bold").setFontSize(20).setFontColor(JColor.blue);
+        
+        var left_state = LeftUser.State != null ? State[LeftUser.State] : '';
+        var LeftStateLabel = new JControls.Label({x:80,y:140},{width:60,height:20}).setText(left_state).setFontType("bold").setFontSize(20).setFontColor(JColor.blue);
+
+        LeftUser.NameLabel = LeftNameLabel;
+        LeftUser.StateLabel = LeftStateLabel;
+
+        Game.LeftUserPanel.addControlInLast([LeftUserLabel,LeftNameLabel,LeftStateLabel]);
+
+        Game.RightUserPanel = new JControls.Object({x:350,y:140},{width:150,height:40});//用于显示右边玩家信息
+
+        var RightUserLabel = new JControls.Label({x:340,y:140},{width:60,height:20}).setText('右玩家' ).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('right');
+        var RightNameLabel = new JControls.Label({x:340,y:160},{width:100,height:20}).setText(RightUser.Name).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('right');
+        
+        var right_state = RightUser.State != null ? State[RightUser.State] : '';
+        var RightStateLabel = new JControls.Label({x:270,y:140},{width:60,height:20}).setText(right_state).setFontType("bold").setFontSize(20).setFontColor(JColor.blue).setTextAlign('right');
+
+        RightUser.NameLabel = RightNameLabel;
+        RightUser.StateLabel = RightStateLabel;
+
+        Game.RightUserPanel.addControlInLast([RightUserLabel,RightNameLabel,RightStateLabel]);
+
+        Game.BtnPanel = new JControls.Object({x:0,y:240},{width:800,height:40});//用于显示游戏控制按钮
+        var ReadyButton = new JControls.Button({x:350,y:0},{width:100,height:40}).setText("准备").setBGImage(ResourceData.Images.btn).visible = false;
+        ReadyButton.onClick = function(){
+                        // 准备就绪
+                        var ready_data = '{"type":"ready","room_id":"'+GInfo.RoomId+'"}';
+                        console.log("玩家准备:"+ready_data);
+                        GInfo.Socket.send(ready_data);
+        }
+
+        
+        Game.BtnPanel.addControlInLast([ReadyButton]);
+
+        JMain.JForm.addControlInLast([Game.BtnPanel,Game.RoomPanel,Game.UserPanel,Game.LeftUserPanel,Game.RightUserPanel]);
+
+        JMain.JForm.show();
+
+};
+
+Game.flush = function(){
+        console.log('Game.flush');
+            
+        var clients = Room.Clients;
+        for (var key in Room.Clients) {
+                if ( User.Seat == key ) {
+                    User.Id = Room.Clients[key].client_id;
+                    User.Name = Room.Clients[key].client_name;
+                    User.State = Room.Clients[key].state;
+
+                    User.NameLabel.text = User.Name;
+                    User.StateLabel.text = State[User.State];
+                    continue;
+                }
+                if ( LeftUser.Seat == key ) {
+                    LeftUser.Id = Room.Clients[key].client_id;
+                    LeftUser.Name = Room.Clients[key].client_name;
+                    LeftUser.State = Room.Clients[key].state;
+
+                    LeftUser.NameLabel.text = LeftUser.Name;
+                    LeftUser.StateLabel.text = State[LeftUser.State];
+
+                }else if ( RightUser.Seat == key ) {
+                    RightUser.Id = Room.Clients[key].client_id;
+                    RightUser.Name = Room.Clients[key].client_name;
+                    RightUser.State = Room.Clients[key].state;
+
+                    RightUser.NameLabel.text = RightUser.Name;
+                    RightUser.StateLabel.text = State[RightUser.State];
+
+                }
+ 
+        }
+
+        JMain.JForm.show();
+};
+
+Game.begin = function(){
+        console.log('Game.begin');
+
+        Game.UserPokerPanel = new GControls.UserPanel({x:200,y:300},{width:400,height:120},1,20);
+        Game.LeftUserPokerPanel = new GControls.PokerPanel({x:695,y:60},{width:100,height:440},2,25);
+        Game.RightUserPokerPanel = new GControls.PokerPanel({x:5,y:60},{width:100,height:440},3,25);
+
+        Game.LandLordPokerPane = new GControls.UserPanel({x:240,y:10},{width:320,height:120},0,105);
+
+        Game.UserPokerPanel.hidePoker = false;//hidePoker为false，显示扑克正面
+
+        Game.LeftUserPokerPanel.hidePoker = true;
+        Game.RightUserPokerPanel.hidePoker = true;
+        Game.LandLordPokerPane.hidePoker = true;
+        // Game.LandLordPokerPane.setBGColor(JColor.red);
+
+        JMain.JForm.addControlInLast([Game.UserPokerPanel,Game.LandLordPokerPane]);
+        Game.UserPokerPanel.toSelectPoker = false;
+        Game.ToPlay = false;
+
+        for (var i = 0; i < Game.Poker.length; i++) {
+                console.log(i);
+                Game.Poker[i] = new GControls.Poker(Game.Poker[i]);
+        }
+
+        Game.LandlordPoker = [0,0,0];
+        for (var i = 0; i < 3; i++) {
+                Game.LandlordPoker[i] = new GControls.Poker(Game.LandlordPoker[i]);
+        }
+
+        Game.LastWin = 0;
+        Game.BeginNum = 1;
+        Game.dealing();
+};
+
+Game.dealing = function(){//发牌
+    console.log('Game.dealing');
+
+    if(Game.DealingHandle)clearTimeout(Game.DealingHandle);
+
+    if(Game.BeginNum >= 17) {//已发完牌
+        Game.MaxScore=0;
+        Game.GrabTime=0;
+        Game.LastHandNum=0;
+        Game.landlord();//抢地主
+
+    }else{
+
+        Game.BeginNum++;
+        Game.DealingHandle = setTimeout(Game.dealing, 50);
+        JMain.JForm.show();
+    }
+};
+
+
+Game.landlord = function(){
+    console.log('Game.landlord');
+    if(Game.GrabTime == 3 && Game.MaxScore == 0 ){//没有人抢地主
+        Game.over();
+        return;
+    }
+
+    if( Game.MaxScore == 3 || ( Game.MaxScore > 0 && Game.GrabTime ==3 ) ){//地主已产生
+
+            Game.LandLordPokerPane.clearControls();
+            for (var i = 0; i < Game.LandlordPoker.length; i++) {
+                    Game.LandlordPoker[i] = new GControls.Poker(Game.LandlordPoker[i]);
+            }
+            Game.LandLordPokerPane.hidePoker = false;
+            
+            switch(Game.LastHandNum){
+                    case  User.Seat:
+                            LeftUser.StateLabel.text = State[4];
+                            RightUser.StateLabel.text = State[4];
+                            Game.LastHandNum = 0;
+ 
+                            Game.ToPlay = true;
+                            Game.play();
+
+                            break;
+                    case LeftUser.Seat:
+                            LeftUser.StateLabel.text = State[5];
+                            RightUser.StateLabel.text = State[4];
+                            break;
+                    case RightUser.Seat:
+                            LeftUser.StateLabel.text = State[4];
+                            RightUser.StateLabel.text = State[5];
+                        break;
+            }
+
+            JMain.JForm.show();
+            return;
+    }
+
+    var hand_num = 0;
+    if ( Game.GrabTime == 0 && Game.LastHandNum == 0 && Game.LastWin == 0 ) {
+        hand_num = 1;
+    }else{
+        hand_num = Game.LastHandNum+1;
+        if ( hand_num > 3 ) {
+             hand_num = 1;
+        }
+    }
+
+    switch(hand_num){
+            case  User.Seat:
+
+                    Game.BtnPanel.clearControls();
+                    var Button1 = new GControls.GrabButton({x:170,y:0},{width:100,height:40},1).setText("1分").setBGImage(ResourceData.Images.btn);
+                    var Button2 = new GControls.GrabButton({x:290,y:0},{width:100,height:40},2).setText("2分").setBGImage(ResourceData.Images.btn);
+                    var Button3 = new GControls.GrabButton({x:410,y:0},{width:100,height:40},3).setText("3分").setBGImage(ResourceData.Images.btn);
+                    var Button4 = new GControls.GrabButton({x:530,y:0},{width:100,height:40},0).setText("不抢").setBGImage(ResourceData.Images.btn);
+                    Game.BtnPanel.addControlInLast([Button1,Button2,Button3,Button4]);
+                    Game.BtnPanel.visible=true;
+                    
+                     LeftUser.StateLabel.text = State[4];
+                     RightUser.StateLabel.text = State[4];
+                    break;
+            case LeftUser.Seat:
+                     LeftUser.StateLabel.text = State[3];
+                     RightUser.StateLabel.text = State[4];
+                break;
+            case RightUser.Seat:
+                     LeftUser.StateLabel.text = State[4];  
+                     RightUser.StateLabel.text = State[3];
+                break;
+    }
+
+    JMain.JForm.show();
+
+};
+
+Game.play = function(){
+    console.log('Game.play');
+    Game.LastHandNum = User.Seat;
+
+    
+
+
+};
+
+Game.over = function(){
+    console.log('Game.over');
+
+};
