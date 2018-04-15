@@ -1,20 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 50505
-Source Host           : localhost:3306
-Source Database       : ddz
-
-Target Server Type    : MYSQL
-Target Server Version : 50505
-File Encoding         : 65001
-
-Date: 2018-01-25 14:21:20
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `too_rooms`
 -- ----------------------------
@@ -30,11 +13,7 @@ CREATE TABLE `too_rooms` (
   `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`rid`),
   KEY `roomid` (`roomid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of too_rooms
--- ----------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for `too_users`
@@ -50,10 +29,8 @@ CREATE TABLE `too_users` (
   `golds` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户金币',
   `cards` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户卡片',
   `roomid` varchar(8) NOT NULL DEFAULT '' COMMENT '房间编号',
+  `create_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `update_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of too_users
--- ----------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
